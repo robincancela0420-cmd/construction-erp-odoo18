@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- Tree View -->
+	<record id="view_construction_product_request_list" model="ir.ui.view">
+		<field name="name">construction.product.request.tree</field>
+		<field name="model">construction.product.request</field>
+		<field name="arch" type="xml">
+			<list>
+				<field name="name"/>
+				<field name="request_date"/>
+				<field name="requested_by"/>
+				<field name="state"/>
+			</list>
+		</field>
+	</record>
+
+	<!-- Forn View -->
+	<record id="view_construction_product_request_form" model="ir.ui.view">
+		<field name="name">construction.product.request.form</field>
+		<field name="model">construction.product.request</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+
+					<group>
+						<field name="name"/>
+						<field name="request_date"/>
+						<field name="requested_by"/>
+						<field name="state"/>
+					</group>
+
+					<group>
+						<field name="reason"/>
+					</group>
+
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_construction_product_request"
+		model="ir.actions.act_window">
+
+		<field name="name">Product Request</field>
+		<field name="res_model">construction.product.request</field>
+		<field name="view_mode">list,form</field>
+
+	</record>
+
+	<!-- Root Menu -->
+	<menuitem
+		id="menu_construction_product_root"
+		name="Construction"
+		sequence="99"
+		web_icon="construction_product_request,static/description/icon.png"/>
+
+	<!-- Product Request Menu -->
+	<menuitem
+		id="menu_product_request"
+		name="Product Request"
+		parent="menu_construction_product_root"
+		action="action_construction_product_request"
+		sequence="1"/>
+</odoo>

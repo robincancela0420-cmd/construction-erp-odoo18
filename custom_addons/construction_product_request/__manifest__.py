@@ -4,7 +4,6 @@
     "summary": "Product Creation Request Workflow",
     "description": """
 Construction Product Request Module
-===================================
 
 Workflow:
 Operations / QS
@@ -16,7 +15,7 @@ Product Master Admin
 Approved
         ↓
 Create Product
-    """,
+""",
     "author": "Robin Cancela",
     "website": "",
     "category": "Construction",
@@ -31,6 +30,8 @@ Create Product
     ],
 
     "data": [
+    	"security/ir.model.access.csv",
+    	"views/product_request_views.xml",
 
     ],
 
