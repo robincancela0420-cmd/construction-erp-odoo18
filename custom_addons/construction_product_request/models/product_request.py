@@ -51,3 +51,12 @@ class ConstructionProductRequest(models.Model):
 		"request_id",
 		string="Product Line"
 	)
+
+	def action_submit(self):
+		self.state = "submitted"
+
+	def action_approve(self):
+		self.state = "approved"
+
+	def action_reject(self):
+		self.state = "rejected"

@@ -32,3 +32,9 @@ class ConstructionProductRequestLine(models.Model):
 		"uom.uom",
 		string="Unit",
 	)
+
+	@api.onchange("product_id")
+	def _onchange_product_id(self):
+		if self.product_id:
+			self.description = self.product_id.name
+			self.uom_id = self.product_id.uom_id.id
