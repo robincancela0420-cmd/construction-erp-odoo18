@@ -45,3 +45,9 @@ class ConstructionProductRequest(models.Model):
 	reason = fields.Text(
 		string="Reason"
 	)
+
+	line_ids = fields.One2many(
+		"construction.product.request.line",
+		"request_id",
+		string="Product Line"
+	)
