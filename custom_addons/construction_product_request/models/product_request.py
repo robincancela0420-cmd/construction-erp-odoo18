@@ -52,11 +52,41 @@ class ConstructionProductRequest(models.Model):
 		string="Product Line"
 	)
 
+	approved_by = fields.Many2one(
+		"res.users",
+		string="Approved By",
+		readonly=True,
+	)
+
+	approved_date = fields.Datetime(
+		string="Approved Date",
+		readonly=True,
+	)
+
+	rejected_by = fields.Many2one(
+		"res.users",
+		string="Rejected By",
+		readonly=True,
+	)
+
+	rejected_date = fields.Datetime(
+		string="Rejected Date",
+		readonly=True,
+	)
+
 	def action_submit(self):
 		self.state = "submitted"
 
 	def action_approve(self):
-		self.state = "approved"
+		self.write({
+			"state": "approved",
+			"approved_by": self.env.user.id,
+			"approved_date": fields.Datetime.now(),
+		})
 
 	def action_reject(self):
-		self.state = "rejected"
+		self.write({
+			"state": "rejected",
+			"rejected_by": self.env.user.id,
+			"rejected_date": fields.Datetime.now(),
+		})

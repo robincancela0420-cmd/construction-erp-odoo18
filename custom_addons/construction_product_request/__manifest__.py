@@ -33,6 +33,7 @@ Create Product
     	"security/ir.model.access.csv",
     	"views/product_request_views.xml",
         "views/product_views.xml",
+        "views/product_template_views.xml",
 
     ],
 
