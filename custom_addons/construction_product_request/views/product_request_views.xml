@@ -9,7 +9,7 @@
 			<list>
 				<field name="name"/>
 				<field name="request_date"/>
-				<field name="requested_by"/>
+				<field name="requested_by" readonly="1"/>
 				<field name="state"/>
 			</list>
 		</field>
@@ -34,12 +34,14 @@
 							string="Approve"
 							type="object"
 							class="btn-success"
+							groups="construction_product_request.group_qs_engineer"
 							invisible="state != 'submitted'"/>
 
 						<button name="action_reject"
 							string="Reject"
 							type="object"
 							class="btn-danger"
+							groups="construction_product_request.group_qs_engineer"
 							invisible="state != 'submitted'"/>
 
 						<field name="state"
@@ -62,7 +64,7 @@
 
 					<notebook>
 						<page string="Product Line">
-							<field name="line_ids">
+							<field name="line_ids" readonly="state != 'draft'">
 								<list editable="bottom">
 									<field name="product_id"/>
 									<field name="description"/>

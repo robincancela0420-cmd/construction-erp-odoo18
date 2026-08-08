@@ -33,6 +33,22 @@ class ConstructionProductRequestLine(models.Model):
 		string="Unit",
 	)
 
+	def write(self, vals):
+		for record in self:
+			if record.request_id.state != "draft":
+				raise AccessError(
+					"Product Request lines cannot be modified after submission."
+				)
+		return super().write(vals)
+
+	def unlink(self):
+		for record in self:
+			if record.request_id.state != "draft":
+				raise AccessError(
+					"Product Request lines cannot be deleted after submission."
+				)
+		return super().unlink()
+
 	@api.onchange("product_id")
 	def _onchange_product_id(self):
 		if self.product_id:

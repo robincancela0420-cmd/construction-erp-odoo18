@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Project Engineer -->
+    <record id="group_project_engineer" model="res.groups">
+        <field name="name">Project Engineer</field>
+    </record>
+
+    <!-- QS Engineer -->
+     <record id="group_qs_engineer" model="res.groups">
+        <field name="name">QS Engineer</field>  
+     </record>
+
+     <!-- Procurement -->
+     <record id="group_procurement" model="res.groups">
+        <field name="name">Procurement</field>
+     </record>
+
+     <!-- Finance Manager -->
+     <record id="group_finance_manager" model="res.groups">
+        <field name="name">Finance Manager</field>
+     </record>
+
+</odoo>

@@ -1,4 +1,6 @@
 from odoo import api, fields, models
+from odoo.exceptions import UserError, ValidationError, AccessError
+import re
 
 class ConstructionProductRequest(models.Model):
 	_name = "construction.product.request"
@@ -77,7 +79,22 @@ class ConstructionProductRequest(models.Model):
 	def action_submit(self):
 		self.state = "submitted"
 
+	def _normalize_product_name(self, name):
+		# Normalize the product name by removing extra spaces and converting to Uppercase
+		if not name:
+			return ""
+		# Remove extra spaces and convert to Uppercase
+		name = name.strip()
+		name = re.sub(r'\s+', ' ', name)
+		return name.upper()
+
 	def action_approve(self):
+		if not self.env.user.has_group(
+			"construction_product_request.group_qs_engineer"
+		):
+			raise AccessError(
+				"Only QS Engineers can approve Product Requests."
+			)
 		self.write({
 			"state": "approved",
 			"approved_by": self.env.user.id,
@@ -85,8 +102,30 @@ class ConstructionProductRequest(models.Model):
 		})
 
 	def action_reject(self):
+		if not self.env.user.has_group(
+			"construction_product_request.group_qs_engineer"
+		):
+			raise AccessError(
+				"Only QS Engineers can reject Product Requests."
+			)
 		self.write({
 			"state": "rejected",
 			"rejected_by": self.env.user.id,
 			"rejected_date": fields.Datetime.now(),
 		})
+
+	def write(self, vals):
+		for record in self:
+			if record.state != "draft":
+				allowed_fields = {
+					"state",
+					"approved_by",
+					"approved_date",
+					"rejected_by",
+					"rejected_date",
+				}
+			if any(field not in allowed_fields for field in vals):
+				raise AccessError(
+					"This Product Request can no longer be edited after submission."
+				)
+		return super().write(vals)
