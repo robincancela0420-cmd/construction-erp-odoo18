@@ -44,6 +44,13 @@
 							groups="construction_product_request.group_qs_engineer"
 							invisible="state != 'submitted'"/>
 
+						<button name="action_create_purchase_order"
+							string="Create Purchase Order"
+							type="object"
+							class="btn-secondary"
+							groups="construction_product_request.group_procurement"
+							invisible="state != 'approved' or purchase_order_id"/>
+
 						<field name="state"
 							widget="statusbar"
 							statusbar_visible="draft, submitted, approved, rejected"/>
@@ -54,7 +61,7 @@
 					<group>
 						<field name="name"/>
 						<field name="request_date"/>
-						<field name="requested_by"/>
+						<field name="requested_by" readonly="1"/>
 						
 					</group>
 

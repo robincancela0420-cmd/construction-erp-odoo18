@@ -76,6 +76,13 @@ class ConstructionProductRequest(models.Model):
 		readonly=True,
 	)
 
+	purchase_order_id = fields.Many2one(
+		"purchase.order",
+		string="Purchase Order",
+		readonly=True,
+		copy=False,
+	)
+
 	def action_submit(self):
 		self.state = "submitted"
 
@@ -114,16 +121,48 @@ class ConstructionProductRequest(models.Model):
 			"rejected_date": fields.Datetime.now(),
 		})
 
+	def action_create_purchase_order(self):
+		if not self.env.user.has_group(
+			"construction_product_request.group_procurement"
+		):
+			raise AccessError(
+				"Only Procurement users can create Purchase Orders."
+			)
+
+		if self.purchase_order_id:
+			raise UserError(
+				"A Purchase Order has already been created for this Product Request."
+			)
+
+		purchase_order = self.env["purchase.order"].create({
+			"origin": self.name,
+			"partner_id": self.env.user.company_id.partner_id.id,
+			"order_line": [
+				(0, 0, {
+					"product_id": line.product_id.id,
+					"name": line.description,
+					"product_qty": line.quantity,
+					"product_uom": line.uom_id.id,
+					"price_unit": line.product_id.standard_price,
+				}) for line in self.line_ids
+			],
+		})
+
+		self.with_context(skip_pr_lock=True).write({
+			"purchase_order_id": purchase_order.id,
+		})
+
 	def write(self, vals):
-		for record in self:
-			if record.state != "draft":
-				allowed_fields = {
-					"state",
-					"approved_by",
+		if not self.env.context.get("skip_pr_lock"):
+			for record in self:
+				if record.state != "draft":
+					allowed_fields = {
+						"state",
+						"approved_by",
 					"approved_date",
 					"rejected_by",
 					"rejected_date",
-				}
+			}
 			if any(field not in allowed_fields for field in vals):
 				raise AccessError(
 					"This Product Request can no longer be edited after submission."

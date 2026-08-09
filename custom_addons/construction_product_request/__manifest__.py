@@ -35,6 +35,7 @@ Create Product
     	"views/product_request_views.xml",
         "views/product_views.xml",
         "views/product_template_views.xml",
+        "views/product_request_po_wizard_views.xml"
         
 
     ],
