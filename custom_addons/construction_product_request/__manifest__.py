@@ -38,6 +38,8 @@ Create Product
         "views/product_template_views.xml",
         "views/product_request_po_wizard_views.xml",
         "views/warehouse_project_views.xml",
+        "views/stock_picking_views.xml",
+        "views/stock_receipt_views.xml",
         
 
     ],
