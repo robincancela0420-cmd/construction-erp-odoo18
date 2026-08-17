@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Material Release List -->
+    <record id="view_material_release_list" model="ir.ui.view">
+        <field name="name">construction.material.release.list</field>
+        <field name="model">construction.material.release</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="release_date"/>
+                <field name="project_id"/>
+                <field name="request_id"/>
+                <field name="location_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Material Release Form -->
+    <record id="view_material_release_form" model="ir.ui.view">
+        <field name="name">construction.material.release.form</field>
+        <field name="model">construction.material.release</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="release_date"/>
+                            <field name="project_id"/>
+                        </group>
+
+                        <group>
+                            <field name="request_id"/>
+                            <field name="location_id"/>
+                            <field name="state"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Materials">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="description"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Material Release Action -->
+    <record id="action_material_release" model="ir.actions.act_window">
+        <field name="name">Material Releases</field>
+        <field name="res_model">construction.material.release</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Material Release Menu -->
+    <menuitem
+        id="menu_material_release"
+        name="Material Releases"
+        parent="menu_construction_product_root"
+        action="action_material_release"
+        sequence="3"/>
+
+</odoo>

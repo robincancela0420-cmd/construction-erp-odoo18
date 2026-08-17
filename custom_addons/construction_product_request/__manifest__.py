@@ -28,6 +28,7 @@ Create Product
         "purchase",
         "stock",
         "project",
+        "hr",
     ],
 
     "data": [
@@ -40,6 +41,9 @@ Create Product
         "views/warehouse_project_views.xml",
         "views/stock_picking_views.xml",
         "views/stock_receipt_views.xml",
+        "views/hr_employee_views.xml",
+        "views/project_views.xml",
+        "views/material_release_views.xml",
         
 
     ],
