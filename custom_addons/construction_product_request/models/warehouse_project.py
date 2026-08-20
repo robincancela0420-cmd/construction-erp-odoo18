@@ -6,6 +6,6 @@ class WarehouseProject(models.Model):
     project_id = fields.Many2one(
         "project.project",
         string="Project",
-        ondelete="set null",
-        index=True,
+        required=True,
+        tracing=True,
     )
