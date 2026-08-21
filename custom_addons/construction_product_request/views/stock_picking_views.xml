@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <record id="view_picking_form_delivery_only" model="ir.ui.view">
-        <field name="name">stock.picking.form.delivery.only</field>
+    <record id="view_picking_form_internal_transfer_only" model="ir.ui.view">
+        <field name="name">stock.picking.form.internal.transfer.only</field>
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
-
         <field name="arch" type="xml">
-
             <xpath expr="//field[@name='picking_type_id']" position="attributes">
-                <attribute name="domain">[('code','=', context.get('restricted_picking_type_code'))]</attribute>
+                <attribute name="domain">[('code', 'in', context.get('restricted_picking_type_code') and [context.get('restricted_picking_type_code')] or ['incoming', 'outgoing', 'internal'])]</attribute>
             </xpath>
-
         </field>
     </record>
 
