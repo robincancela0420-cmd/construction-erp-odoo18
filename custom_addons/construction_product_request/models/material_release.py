@@ -65,9 +65,9 @@ class ConstructionMaterialRelease(models.Model):
         self.ensure_one()
 
         # Find Central Warehouse Delivery Operation Type
-        central_warehouse = self.env["stock.warehouse"].search({
+        central_warehouse = self.env["stock.warehouse"].search([
             ("name", "=", "Central Warehouse"),
-        }, limit=1)
+        ], limit=1)
 
         if not central_warehouse:
             raise UserError(

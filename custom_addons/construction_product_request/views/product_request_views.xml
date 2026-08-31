@@ -9,6 +9,7 @@
 			<list>
 				<field name="name"/>
 				<field name="request_date"/>
+				<field name="project_id"/>
 				<field name="requested_by" readonly="1"/>
 				<field name="state"/>
 			</list>
@@ -62,6 +63,7 @@
 						<field name="name"/>
 						<field name="request_date"/>
 						<field name="requested_by" readonly="1"/>
+						<field name="project_id"/>
 						
 					</group>
 

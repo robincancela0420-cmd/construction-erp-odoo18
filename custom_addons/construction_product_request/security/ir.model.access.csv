@@ -13,3 +13,4 @@ access_purchase_order_line_procurement,Purchase Order Line Procurement,purchase.
 access_construction_project_user,construction.project.user,model_construction_project,base.group_user,1,1,1,1
 access_construction_material_release_user,construction.material.release.user,model_construction_material_release,base.group_user,1,1,1,1
 access_construction_material_release_line_user,construction.material.release.line.user,model_construction_material_release_line,base.group_user,1,1,1,1
+access_construction_project_cost_user,construction.project.cost user,model_construction_project_cost,base.group_user,1,1,1,1

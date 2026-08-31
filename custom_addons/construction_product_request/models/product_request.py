@@ -32,6 +32,13 @@ class ConstructionProductRequest(models.Model):
 		tracking=True,
 	)
 
+	project_id = fields.Many2one(
+		"project.project",
+		string="Project",
+		required=True,
+		tracking=True,
+	)
+
 	state = fields.Selection(
 		[
 			("draft", "Draft"),
@@ -134,9 +141,16 @@ class ConstructionProductRequest(models.Model):
 				"A Purchase Order has already been created for this Product Request."
 			)
 
+		warehouse = self.env["stock.warehouse"].search(
+			[("project_id", "=", self.project_id.id)],
+			limit=1,
+		)
+
 		purchase_order = self.env["purchase.order"].create({
 			"origin": self.name,
 			"partner_id": self.env.user.company_id.partner_id.id,
+			"project_id": self.project_id.id,
+			"picking_type_id": warehouse.in_type_id.id,
 			"order_line": [
 				(0, 0, {
 					"product_id": line.product_id.id,
@@ -159,12 +173,15 @@ class ConstructionProductRequest(models.Model):
 					allowed_fields = {
 						"state",
 						"approved_by",
-					"approved_date",
-					"rejected_by",
-					"rejected_date",
+						"approved_date",
+						"rejected_by",
+						"rejected_date",
 			}
-			if any(field not in allowed_fields for field in vals):
-				raise AccessError(
-					"This Product Request can no longer be edited after submission."
-				)
+
+			for record in self:
+				if record.state != "draft":
+					if any(field not in allowed_fields for field in vals):
+						raise AccessError(
+							"This Product Request can no longer be edited after submission"
+						)
 		return super().write(vals)
