@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="spreadsheet_dashboard_group_equipment_acquisition"
+            model="spreadsheet.dashboard.group">
+        <field name="name">Equipment Acquisition</field>
+        <field name="sequence">450</field>
+    </record>
+
+    <record id="spreadsheet_dashboard_equipment_acquisition"
+            model="spreadsheet.dashboard">
+        <field name="name">Equipment Acquisition Dashboard</field>
+
+        <field name="spreadsheet_binary_data"
+               type="base64"
+               file="equipment_acquisition_history/data/files/equipment_acquisition_dashboard_v2.json"/>
+
+        <field name="dashboard_group_id"
+               ref="equipment_acquisition_history.spreadsheet_dashboard_group_equipment_acquisition"/>
+
+        <field name="main_data_model_ids"
+               eval="[(4, ref('equipment_acquisition_history.model_equipment_acquisition'))]"/>
+
+        <field name="is_published">True</field>
+    </record>
+
+</odoo>

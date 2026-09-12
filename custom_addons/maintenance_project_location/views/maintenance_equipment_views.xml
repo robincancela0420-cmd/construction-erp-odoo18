@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+    <!-- Equipment Form: Add Product and Project Location -->
     <record id="maintenance_equipment_form_project_location" model="ir.ui.view">
         <field name="name">maintenance.equipment.form.project.location</field>
         <field name="model">maintenance.equipment</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
         <field name="arch" type="xml">
 
-            <xpath expr="//page[@name='product_information']//field[@name='serial_no']" position="after">
+            <xpath expr="//page[@name='product_information']//field[@name='serial_no']"
+                   position="after">
                 <field name="product_id"/>
             </xpath>
 
             <xpath expr="//field[@name='location']" position="after">
                 <field name="project_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- Equipment Kanban: Show Project -->
+    <record id="maintenance_equipment_kanban_project_location" model="ir.ui.view">
+        <field name="name">maintenance.equipment.kanban.project.location</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_kanban"/>
+        <field name="arch" type="xml">
+
+            <!-- Make project_id available to the kanban -->
+            <xpath expr="//kanban" position="inside">
+                <field name="project_id"/>
+            </xpath>
+
+            <!-- Display Project on the equipment card -->
+            <xpath expr="//t[@t-name='card']/footer" position="inside">
+                <div t-if="record.project_id.raw_value"
+                     class="ms-2 fw-bold">
+                    <field name="project_id"/>
+                </div>
             </xpath>
 
         </field>

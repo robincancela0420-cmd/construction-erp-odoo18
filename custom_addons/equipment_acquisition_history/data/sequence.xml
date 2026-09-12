@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="seq_equipment_acquisition" model="ir.sequence">
+        <field name="name">Equipment Acquisition</field>
+        <field name="code">equipment.acquisition</field>
+        <field name="prefix">ACQ/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+
+</odoo>

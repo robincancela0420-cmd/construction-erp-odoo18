@@ -1,0 +1,112 @@
+{
+    "version": 21,
+    "sheets": [
+        {
+            "id": "sheet1",
+            "name": "Dashboard",
+            "colNumber": 8,
+            "rowNumber": 20,
+            "cells": {
+                "A1": {
+                    "content": "Equipment Acquisition Dashboard"
+                },
+                "A3": {
+                    "content": "Total Acquired Cost"
+                },
+                "B3": {
+                    "content": "=PIVOT.VALUE(1,\"amount\")"
+                },
+                "A4": {
+                    "content": "Total Qty Acquired"
+                },
+                "B4": {
+                    "content": "=PIVOT.VALUE(1,\"qty_acquired\")"
+                },
+                "A5": {
+                    "content": "Current Qty"
+                },
+                "B5": {
+                    "content": "=PIVOT.VALUE(1,\"current_qty\")"
+                },
+                "A6": {
+                    "content": "Qty Difference"
+                },
+                "B6": {
+                    "content": "=PIVOT.VALUE(1,\"qty_difference\")"
+                },
+                "A7": {
+                    "content": "Acquisition Records"
+                },
+                "B7": {
+                    "content": "=PIVOT.VALUE(1,\"__count\")"
+                }
+            }
+        }
+    ],
+    "styles": {},
+    "formats": {},
+    "borders": {},
+    "revisionId": "START_REVISION",
+    "uniqueFigureIds": [],
+    "settings": {
+        "locale": "en-US"
+    },
+    "pivots": {
+        "equipment_acquisition_pivot": {
+            "type": "ODOO",
+            "domain": [],
+            "context": {},
+            "sortedColumn": {
+                "groupId": [
+                    [],
+                    []
+                ],
+                "measure": "amount",
+                "order": "desc",
+                "originIndexes": [
+                    0
+                ]
+            },
+            "measures": [
+                {
+                    "id": "amount",
+                    "fieldName": "amount",
+                    "aggregator": "sum"
+                },
+                {
+                    "id": "qty_acquired",
+                    "fieldName": "qty_acquired",
+                    "aggregator": "sum"
+                },
+                {
+                    "id": "current_qty",
+                    "fieldName": "current_qty",
+                    "aggregator": "sum"
+                },
+                {
+                    "id": "qty_difference",
+                    "fieldName": "qty_difference",
+                    "aggregator": "sum"
+                },
+                {
+                    "id": "__count",
+                    "fieldName": "__count",
+                    "aggregator": "count"
+                }
+            ],
+            "model": "equipment.acquisition",
+            "columns": [],
+            "rows": [],
+            "name": "Equipment Acquisition",
+            "formulaId": "1",
+            "fieldMatching": {}
+        }
+    },
+    "pivotNextId": 2,
+    "customTableStyles": {},
+    "odooVersion": 18,
+    "globalFilters": [],
+    "lists": {},
+    "listNextId": 1,
+    "chartOdooMenusReferences": {}
+}

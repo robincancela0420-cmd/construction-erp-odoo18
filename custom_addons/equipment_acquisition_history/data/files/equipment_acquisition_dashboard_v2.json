@@ -1,0 +1,855 @@
+{
+  "version": 21,
+  "sheets": [
+    {
+      "id": "sheet1",
+      "name": "Dashboard",
+      "colNumber": 10,
+      "rowNumber": 40,
+      "cells": {
+        "A1": {
+          "content": "EQUIPMENT ACQUISITION DASHBOARD"
+        },
+        "A2": {
+          "content": "Summary of acquired equipment and acquisition cost"
+        },
+        "A4": {
+          "content": "TOTAL ACQUIRED COST"
+        },
+        "A5": {
+          "content": "=FORMAT.LARGE.NUMBER(PIVOT.VALUE(1,\"amount\"))"
+        },
+        "D4": {
+          "content": "ACQUISITION RECORDS"
+        },
+        "D5": {
+          "content": "=PIVOT.VALUE(1,\"__count\")"
+        },
+        "G4": {
+          "content": "CURRENT QTY"
+        },
+        "G5": {
+          "content": "=PIVOT.VALUE(1,\"current_qty\")"
+        },
+        "A8": {
+          "content": "ACQUISITION COST BY YEAR"
+        },
+        "A9": {
+          "content": "Year"
+        },
+        "B9": {
+          "content": "Acquisition Cost"
+        },
+        "C9": {
+          "content": "Current Qty"
+        },
+        "D9": {
+          "content": "Records"
+        },
+        "A10": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",1)"
+        },
+        "B10": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",1)"
+        },
+        "C10": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",1)"
+        },
+        "D10": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",1)"
+        },
+        "A11": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",2)"
+        },
+        "B11": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",2)"
+        },
+        "C11": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",2)"
+        },
+        "D11": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",2)"
+        },
+        "A12": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",3)"
+        },
+        "B12": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",3)"
+        },
+        "C12": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",3)"
+        },
+        "D12": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",3)"
+        },
+        "A13": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",4)"
+        },
+        "B13": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",4)"
+        },
+        "C13": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",4)"
+        },
+        "D13": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",4)"
+        },
+        "A14": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",5)"
+        },
+        "B14": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",5)"
+        },
+        "C14": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",5)"
+        },
+        "D14": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",5)"
+        },
+        "A15": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",6)"
+        },
+        "B15": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",6)"
+        },
+        "C15": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",6)"
+        },
+        "D15": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",6)"
+        },
+        "A16": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",7)"
+        },
+        "B16": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",7)"
+        },
+        "C16": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",7)"
+        },
+        "D16": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",7)"
+        },
+        "A17": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",8)"
+        },
+        "B17": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",8)"
+        },
+        "C17": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",8)"
+        },
+        "D17": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",8)"
+        },
+        "A18": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",9)"
+        },
+        "B18": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",9)"
+        },
+        "C18": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",9)"
+        },
+        "D18": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",9)"
+        },
+        "A19": {
+          "content": "=PIVOT.HEADER(2,\"#acquisition_year\",10)"
+        },
+        "B19": {
+          "content": "=PIVOT.VALUE(2,\"amount\",\"#acquisition_year\",10)"
+        },
+        "C19": {
+          "content": "=PIVOT.VALUE(2,\"current_qty\",\"#acquisition_year\",10)"
+        },
+        "D19": {
+          "content": "=PIVOT.VALUE(2,\"__count\",\"#acquisition_year\",10)"
+        },
+        "F8": {
+          "content": "ACQUISITION COST BY PROJECT"
+        },
+        "F9": {
+          "content": "Project"
+        },
+        "G9": {
+          "content": "Cost"
+        },
+        "F10": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",1)"
+        },
+        "G10": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",1)"
+        },
+        "F11": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",2)"
+        },
+        "G11": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",2)"
+        },
+        "F12": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",3)"
+        },
+        "G12": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",3)"
+        },
+        "F13": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",4)"
+        },
+        "G13": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",4)"
+        },
+        "F14": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",5)"
+        },
+        "G14": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",5)"
+        },
+        "F15": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",6)"
+        },
+        "G15": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",6)"
+        },
+        "F16": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",7)"
+        },
+        "G16": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",7)"
+        },
+        "F17": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",8)"
+        },
+        "G17": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",8)"
+        },
+        "F18": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",9)"
+        },
+        "G18": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",9)"
+        },
+        "F19": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",10)"
+        },
+        "G19": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",10)"
+        },
+        "F20": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",11)"
+        },
+        "G20": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",11)"
+        },
+        "F21": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",12)"
+        },
+        "G21": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",12)"
+        },
+        "F22": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",13)"
+        },
+        "G22": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",13)"
+        },
+        "F23": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",14)"
+        },
+        "G23": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",14)"
+        },
+        "F24": {
+          "content": "=PIVOT.HEADER(3,\"#project_id\",15)"
+        },
+        "G24": {
+          "content": "=PIVOT.VALUE(3,\"amount\",\"#project_id\",15)"
+        },
+        "I8": {
+          "content": "ACQUISITION COST BY SUPPLIER"
+        },
+        "I9": {
+          "content": "Supplier"
+        },
+        "J9": {
+          "content": "Cost"
+        },
+        "I10": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",1)"
+        },
+        "J10": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",1)"
+        },
+        "I11": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",2)"
+        },
+        "J11": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",2)"
+        },
+        "I12": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",3)"
+        },
+        "J12": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",3)"
+        },
+        "I13": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",4)"
+        },
+        "J13": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",4)"
+        },
+        "I14": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",5)"
+        },
+        "J14": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",5)"
+        },
+        "I15": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",6)"
+        },
+        "J15": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",6)"
+        },
+        "I16": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",7)"
+        },
+        "J16": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",7)"
+        },
+        "I17": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",8)"
+        },
+        "J17": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",8)"
+        },
+        "I18": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",9)"
+        },
+        "J18": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",9)"
+        },
+        "I19": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",10)"
+        },
+        "J19": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",10)"
+        },
+        "I20": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",11)"
+        },
+        "J20": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",11)"
+        },
+        "I21": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",12)"
+        },
+        "J21": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",12)"
+        },
+        "I22": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",13)"
+        },
+        "J22": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",13)"
+        },
+        "I23": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",14)"
+        },
+        "J23": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",14)"
+        },
+        "I24": {
+          "content": "=PIVOT.HEADER(4,\"#supplier\",15)"
+        },
+        "J24": {
+          "content": "=PIVOT.VALUE(4,\"amount\",\"#supplier\",15)"
+        },
+        "A22": {
+          "content": "TOP EQUIPMENT BY ACQUISITION COST"
+        },
+        "A23": {
+          "content": "Equipment"
+        },
+        "B23": {
+          "content": "Cost"
+        },
+        "C23": {
+          "content": "Records"
+        },
+        "A24": {
+          "content": "=PIVOT.HEADER(5,\"#item\",1)"
+        },
+        "B24": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",1)"
+        },
+        "C24": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",1)"
+        },
+        "A25": {
+          "content": "=PIVOT.HEADER(5,\"#item\",2)"
+        },
+        "B25": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",2)"
+        },
+        "C25": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",2)"
+        },
+        "A26": {
+          "content": "=PIVOT.HEADER(5,\"#item\",3)"
+        },
+        "B26": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",3)"
+        },
+        "C26": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",3)"
+        },
+        "A27": {
+          "content": "=PIVOT.HEADER(5,\"#item\",4)"
+        },
+        "B27": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",4)"
+        },
+        "C27": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",4)"
+        },
+        "A28": {
+          "content": "=PIVOT.HEADER(5,\"#item\",5)"
+        },
+        "B28": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",5)"
+        },
+        "C28": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",5)"
+        },
+        "A29": {
+          "content": "=PIVOT.HEADER(5,\"#item\",6)"
+        },
+        "B29": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",6)"
+        },
+        "C29": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",6)"
+        },
+        "A30": {
+          "content": "=PIVOT.HEADER(5,\"#item\",7)"
+        },
+        "B30": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",7)"
+        },
+        "C30": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",7)"
+        },
+        "A31": {
+          "content": "=PIVOT.HEADER(5,\"#item\",8)"
+        },
+        "B31": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",8)"
+        },
+        "C31": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",8)"
+        },
+        "A32": {
+          "content": "=PIVOT.HEADER(5,\"#item\",9)"
+        },
+        "B32": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",9)"
+        },
+        "C32": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",9)"
+        },
+        "A33": {
+          "content": "=PIVOT.HEADER(5,\"#item\",10)"
+        },
+        "B33": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",10)"
+        },
+        "C33": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",10)"
+        },
+        "A34": {
+          "content": "=PIVOT.HEADER(5,\"#item\",11)"
+        },
+        "B34": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",11)"
+        },
+        "C34": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",11)"
+        },
+        "A35": {
+          "content": "=PIVOT.HEADER(5,\"#item\",12)"
+        },
+        "B35": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",12)"
+        },
+        "C35": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",12)"
+        },
+        "A36": {
+          "content": "=PIVOT.HEADER(5,\"#item\",13)"
+        },
+        "B36": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",13)"
+        },
+        "C36": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",13)"
+        },
+        "A37": {
+          "content": "=PIVOT.HEADER(5,\"#item\",14)"
+        },
+        "B37": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",14)"
+        },
+        "C37": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",14)"
+        },
+        "A38": {
+          "content": "=PIVOT.HEADER(5,\"#item\",15)"
+        },
+        "B38": {
+          "content": "=PIVOT.VALUE(5,\"amount\",\"#item\",15)"
+        },
+        "C38": {
+          "content": "=PIVOT.VALUE(5,\"__count\",\"#item\",15)"
+        }
+      },
+      "figures": [
+        {
+          "id": "c668d9a6-f86e-4bfd-8949-1dc86973b25c",
+          "x": 0,
+          "y": 0,
+          "width": 300,
+          "height": 90,
+          "tag": "chart",
+          "data": {
+            "type": "scorecard",
+            "title": {
+              "text": "Total Acquired Cost",
+              "align": "left",
+              "bold": true
+            },
+            "keyValue": "A5",
+            "humanize": false
+          }
+        },
+        {
+          "id": "40f8792c-f6db-4854-b8c9-44fe4ad6d570",
+          "x": 320,
+          "y": 0,
+          "width": 300,
+          "height": 90,
+          "tag": "chart",
+          "data": {
+            "type": "scorecard",
+            "title": {
+              "text": "Acquisition Records",
+              "align": "left",
+              "bold": true
+            },
+            "keyValue": "D5",
+            "humanize": false
+          }
+        },
+        {
+          "id": "44f4a43b-d4e0-4e56-99c2-fbc6f70b08ed",
+          "x": 640,
+          "y": 0,
+          "width": 300,
+          "height": 90,
+          "tag": "chart",
+          "data": {
+            "type": "scorecard",
+            "title": {
+              "text": "Current Qty",
+              "align": "left",
+              "bold": true
+            },
+            "keyValue": "G5",
+            "humanize": false
+          }
+        },
+        {
+          "id": "b93c9d40-d1fb-4e36-b0be-af65d2f7a576",
+          "x": 0,
+          "y": 110,
+          "width": 460,
+          "height": 300,
+          "tag": "chart",
+          "data": {
+            "type": "bar",
+            "dataSetsHaveTitle": true,
+            "dataSets": [
+              {
+                "dataRange": "A9:A19"
+              },
+              {
+                "dataRange": "B9:B19"
+              }
+            ],
+            "legendPosition": "none",
+            "labelRange": "A10:A19",
+            "title": {
+              "text": "Acquisition Cost by Year"
+            },
+            "showValues": true,
+            "aggregated": false
+          }
+        },
+        {
+          "id": "5d83a6d5-c100-4ec0-b4e2-cc90943e5af4",
+          "x": 480,
+          "y": 110,
+          "width": 460,
+          "height": 300,
+          "tag": "chart",
+          "data": {
+            "type": "pie",
+            "dataSetsHaveTitle": true,
+            "dataSets": [
+              {
+                "dataRange": "G9:G24"
+              }
+            ],
+            "labelRange": "F10:F24",
+            "title": {
+              "text": "Acquisition Cost by Project"
+            },
+            "showValues": true,
+            "aggregated": false
+          }
+        },
+        {
+          "id": "c1fb86ee-24cd-4abe-962e-733950d5a911",
+          "x": 0,
+          "y": 430,
+          "width": 460,
+          "height": 300,
+          "tag": "chart",
+          "data": {
+            "type": "bar",
+            "dataSetsHaveTitle": true,
+            "dataSets": [
+              {
+                "dataRange": "J9:J24"
+              }
+            ],
+            "legendPosition": "none",
+            "labelRange": "I10:I24",
+            "title": {
+              "text": "Acquisition Cost by Supplier"
+            },
+            "showValues": true,
+            "aggregated": false
+          }
+        }
+      ]
+    }
+  ],
+  "styles": {},
+  "formats": {},
+  "borders": {},
+  "revisionId": "START_REVISION",
+  "uniqueFigureIds": [],
+  "settings": {
+    "locale": "en-US"
+  },
+  "pivots": {
+    "equipment_acquisition_overall": {
+      "type": "ODOO",
+      "domain": [],
+      "context": {},
+      "sortedColumn": {
+        "groupId": [
+          [],
+          []
+        ],
+        "measure": "amount",
+        "order": "desc",
+        "originIndexes": [
+          0
+        ]
+      },
+      "measures": [
+        {
+          "id": "amount",
+          "fieldName": "amount",
+          "aggregator": "sum"
+        },
+        {
+          "id": "current_qty",
+          "fieldName": "current_qty",
+          "aggregator": "sum"
+        },
+        {
+          "id": "__count",
+          "fieldName": "__count"
+        }
+      ],
+      "model": "equipment.acquisition",
+      "columns": [],
+      "rows": [],
+      "name": "Equipment Acquisition Overall",
+      "formulaId": "1",
+      "fieldMatching": {}
+    },
+    "equipment_acquisition_by_year": {
+      "type": "ODOO",
+      "domain": [],
+      "context": {},
+      "sortedColumn": {
+        "groupId": [
+          [],
+          []
+        ],
+        "measure": "amount",
+        "order": "desc",
+        "originIndexes": [
+          0
+        ]
+      },
+      "measures": [
+        {
+          "id": "amount",
+          "fieldName": "amount",
+          "aggregator": "sum"
+        },
+        {
+          "id": "current_qty",
+          "fieldName": "current_qty",
+          "aggregator": "sum"
+        },
+        {
+          "id": "__count",
+          "fieldName": "__count"
+        }
+      ],
+      "model": "equipment.acquisition",
+      "columns": [],
+      "rows": [
+        {
+          "fieldName": "acquisition_year"
+        }
+      ],
+      "name": "Acquisition by Year",
+      "formulaId": "2",
+      "fieldMatching": {}
+    },
+    "equipment_acquisition_by_project": {
+      "type": "ODOO",
+      "domain": [],
+      "context": {},
+      "sortedColumn": {
+        "groupId": [
+          [],
+          []
+        ],
+        "measure": "amount",
+        "order": "desc",
+        "originIndexes": [
+          0
+        ]
+      },
+      "measures": [
+        {
+          "id": "amount",
+          "fieldName": "amount",
+          "aggregator": "sum"
+        },
+        {
+          "id": "__count",
+          "fieldName": "__count"
+        }
+      ],
+      "model": "equipment.acquisition",
+      "columns": [],
+      "rows": [
+        {
+          "fieldName": "project_id"
+        }
+      ],
+      "name": "Acquisition by Project",
+      "formulaId": "3",
+      "fieldMatching": {}
+    },
+    "equipment_acquisition_by_supplier": {
+      "type": "ODOO",
+      "domain": [],
+      "context": {},
+      "sortedColumn": {
+        "groupId": [
+          [],
+          []
+        ],
+        "measure": "amount",
+        "order": "desc",
+        "originIndexes": [
+          0
+        ]
+      },
+      "measures": [
+        {
+          "id": "amount",
+          "fieldName": "amount",
+          "aggregator": "sum"
+        },
+        {
+          "id": "__count",
+          "fieldName": "__count"
+        }
+      ],
+      "model": "equipment.acquisition",
+      "columns": [],
+      "rows": [
+        {
+          "fieldName": "supplier"
+        }
+      ],
+      "name": "Acquisition by Supplier",
+      "formulaId": "4",
+      "fieldMatching": {}
+    },
+    "equipment_acquisition_by_item": {
+      "type": "ODOO",
+      "domain": [],
+      "context": {},
+      "sortedColumn": {
+        "groupId": [
+          [],
+          []
+        ],
+        "measure": "amount",
+        "order": "desc",
+        "originIndexes": [
+          0
+        ]
+      },
+      "measures": [
+        {
+          "id": "amount",
+          "fieldName": "amount",
+          "aggregator": "sum"
+        },
+        {
+          "id": "__count",
+          "fieldName": "__count"
+        }
+      ],
+      "model": "equipment.acquisition",
+      "columns": [],
+      "rows": [
+        {
+          "fieldName": "item"
+        }
+      ],
+      "name": "Acquisition by Equipment",
+      "formulaId": "5",
+      "fieldMatching": {}
+    }
+  },
+  "pivotNextId": 6,
+  "customTableStyles": {},
+  "odooVersion": 18,
+  "globalFilters": [],
+  "lists": {},
+  "listNextId": 1,
+  "chartOdooMenusReferences": {}
+}

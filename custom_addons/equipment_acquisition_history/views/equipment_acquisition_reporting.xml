@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_equipment_acquisition_pivot" model="ir.ui.view">
+        <field name="name">equipment.acquisition.pivot</field>
+        <field name="model">equipment.acquisition</field>
+        <field name="arch" type="xml">
+            <pivot string="Equipment Acquisition Analysis">
+                <field name="amount" type="measure"/>
+                <field name="qty_acquired" type="measure"/>
+                <field name="current_qty" type="measure"/>
+                <field name="qty_difference" type="measure"/>
+                <field name="acquisition_year" type="row"/>
+                <field name="project_id" type="row"/>
+                <field name="supplier" type="row"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_equipment_acquisition_graph" model="ir.ui.view">
+        <field name="name">equipment.acquisition.graph</field>
+        <field name="model">equipment.acquisition</field>
+        <field name="arch" type="xml">
+            <graph string="Equipment Acquisition Analysis" type="bar">
+                <field name="acquisition_year"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_equipment_acquisition_reporting" model="ir.actions.act_window">
+        <field name="name">Acquisition Analysis</field>
+        <field name="res_model">equipment.acquisition</field>
+        <field name="view_mode">graph,pivot,list</field>
+    </record>
+
+    <menuitem
+        id="menu_equipment_acquisition_reporting"
+        name="Acquisition Analysis"
+        parent="maintenance.menu_maintenance_title"
+        action="action_equipment_acquisition_reporting"
+        sequence="91"/>
+
+</odoo>
